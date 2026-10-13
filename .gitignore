@@ -1,0 +1,14 @@
+# python
+__pycache__/
+*.py[cod]
+
+# generated test fixtures and conversion outputs
+tests/_fixtures/
+
+# editor / OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# local backups
+*.bak-*
