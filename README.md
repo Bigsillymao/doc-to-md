@@ -100,7 +100,7 @@ python scripts/xlsx-to-md.py data.csv
   - 中文 + 空格文件名：通过
 - flash 档首次使用会从 modelscope 下载模型（实测约 226 MB，缓存在 `~/.mineru/models/`），之后离线秒级
 - `to-md.sh` 在 Git Bash 实测通过；Linux / macOS 未实测（仅包装同一 CLI）
-- 自测样例可再生成：`python tests/make_test_files.py`（PDF 样例需 LibreOffice 或自备 PDF）
+- 自测样例可再生成：`python tests/make_test_files.py`（PDF 样例需 LibreOffice 或自备 PDF）。⚠ 测试产物目录 `tests/_fixtures/` 已在 `.gitignore` 中——**不要提交或上传测试产物**（二进制样例可能带转换工具写入的文档属性）
 
 ## English Quick Start
 

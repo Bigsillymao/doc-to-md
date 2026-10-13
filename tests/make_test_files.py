@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""生成自测样例文件（默认写入 tests/_fixtures/）。
+"""生成自测样例文件（默认写入 tests/_fixtures/；该目录已在 .gitignore 中）。
 
   table_demo.xlsx   两个工作表（中文表头 + 浮点/文本）
   table_gbk.csv     GBK 编码 CSV
@@ -9,6 +9,9 @@
 
 用法：
   python tests/make_test_files.py [输出目录]
+
+⚠ 生成的测试产物（尤其经 LibreOffice 等外部工具转换出的文件）可能携带该工具写入的
+   文档属性；请勿把 _fixtures 目录提交或上传，需要时随时重新生成即可。
 """
 import sys
 from pathlib import Path
