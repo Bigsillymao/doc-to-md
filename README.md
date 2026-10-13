@@ -35,8 +35,8 @@ mineru server start        # 每次开机后启动本地解析服务（flash 档
 **2. 本技能**：把本仓库放进 agent 的 skills 目录，例如：
 
 ```bash
-git clone <repo-url> ~/.zcode/skills/doc-to-md     # ZCode
-git clone <repo-url> ~/.claude/skills/doc-to-md    # Claude Code
+git clone https://github.com/Bigsillymao/doc-to-md ~/.zcode/skills/doc-to-md     # ZCode
+git clone https://github.com/Bigsillymao/doc-to-md ~/.claude/skills/doc-to-md    # Claude Code
 ```
 
 也可以不装技能，直接把 `scripts/` 当普通命令行工具用。
