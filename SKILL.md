@@ -67,6 +67,7 @@ python "<skill-dir>\scripts\xlsx-to-md.py" "<文件路径>"
 ## 兜底与已知坑
 
 - 「Local parse-server is disabled」→ 先 `mineru server start`，或改用 `-Tier flash`
+- `mineru --version` 确认版本：本技能按 **MinerU 4.x**（子命令式 `mineru parse …`）编写；3.x 及更早的 CLI 与参数不同（旧版 `-p/-o` 全局参数），请先升级：`pip install -U "mineru[core]"`
 - mineru 找不到 → `pip install "mineru[core]"`，或用 `-MineruExe` / `MINERU_EXE` 指定路径
 - 非 PDF 文件（docx / 图片等）报 `Page range is only supported for PDF files` → `--pages` 仅支持 PDF；本技能脚本已按类型自动省略，手工调用时注意别传
 - 报 `cas-server.xethub.hf.co` 401 / `File reconstruction error` → 模型源被解析成 huggingface 且走了 Xet 通道：把 `~/.mineru/config.yaml` 写为 `model: source: modelscope`（或服务启动前 `MINERU_MODEL_SOURCE=modelscope`），重启 `mineru server`

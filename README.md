@@ -81,6 +81,7 @@ python scripts/xlsx-to-md.py data.csv
 | --- | --- |
 | `Local parse-server is disabled` | 本地解析服务没起：`mineru server start`（每次开机一次） |
 | `mineru not found` | 没装或不在 PATH：`pip install "mineru[core]"`；或设 `MINERU_EXE` 指定 |
+| 装了 MinerU 但参数不认（如 `-p`/`-o` 全局参数） | 3.x 及更早版本的 CLI 与 4.x 不同：`mineru --version` 确认；本仓库按 4.x 子命令式编写，旧版请升级（`pip install -U "mineru[core]"`） |
 | `.ps1` 中文乱码 / 报奇怪的错 | PowerShell 5.1 把无 BOM 的 UTF-8 当 GBK 读：脚本内容保持纯 ASCII |
 | 真 `.xls` 转出空表 | 老二进制格式不直接支持：`soffice --headless --convert-to xlsx` 先转 |
 | `.xls` 打开是网页源码 | 系统导出的是 HTML 伪装 `.xls`：本仓库脚本已自动识别处理 |
