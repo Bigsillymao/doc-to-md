@@ -1,5 +1,7 @@
 # doc-to-md
 
+> 🌐 [English](README_EN.md) | 简体中文
+
 **让 AI 先"读懂"，再回答：把 PDF / 扫描件 / Office / 表格先转成 Markdown，再交给模型阅读。**
 
 一个通用 [Agent Skill](https://code.claude.com/docs/en/skills)（Claude Code / ZCode 等 agent 加载 `SKILL.md` 即用），
@@ -101,21 +103,6 @@ python scripts/xlsx-to-md.py data.csv
 - flash 档首次使用会从 modelscope 下载模型（实测约 226 MB，缓存在 `~/.mineru/models/`），之后离线秒级
 - `to-md.sh` 在 Git Bash 实测通过；Linux / macOS 未实测（仅包装同一 CLI）
 - 自测样例可再生成：`python tests/make_test_files.py`（PDF 样例需 LibreOffice 或自备 PDF）。⚠ 测试产物目录 `tests/_fixtures/` 已在 `.gitignore` 中——**不要提交或上传测试产物**（二进制样例可能带转换工具写入的文档属性）
-
-## English Quick Start
-
-A portable Agent Skill + CLI wrappers that convert documents to Markdown **before** an LLM reads them.
-
-```bash
-pip install "mineru[core]" && mineru server start     # parse server: once per boot
-./scripts/to-md.sh paper.pdf                          # -> paper_md.md (page markers, tables kept)
-./scripts/to-md.sh paper.pdf -t standard -p '1-5'     # higher quality tier, first 5 pages
-python scripts/xlsx-to-md.py data.xlsx                # also .csv and HTML-masqueraded .xls
-```
-
-- Tiers: `flash` (default, offline) | `basic` | `standard` | `advanced` (models download on first use)
-- `MINERU_EXE` overrides the mineru path; `MINERU_MODEL_SOURCE` switches the model mirror (default `modelscope`)
-- Numbers in the generated Markdown are for reading only — verify against the source file before formal use.
 
 ## License
 
